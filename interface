@@ -1,0 +1,7 @@
+
+# loopback interfaces
+load "interfaces/lo"
+
+# wifi
+load "interfaces/wlp2s0"
+
