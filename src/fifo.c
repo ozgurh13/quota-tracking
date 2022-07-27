@@ -70,7 +70,7 @@ fifo_listen()
 				break;
 
 			case T_DELETE_ID:
-				FLUSH(printf("deleting { id = %d } ", token.id))
+				FLUSH(printf("deleting { id = %zu } ", token.id))
 				if (proclist_deleteby_id(&list, token.id))
 					puts("deleted!");
 				else

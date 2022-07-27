@@ -250,7 +250,7 @@ done:
 void
 proclist_print(proclist_t *list)
 {
-	printf(":: procs (%d) ::\n", list->size);
+	printf(":: procs (%zu) ::\n", list->size);
 
 	if (list_isempty(list))
 		return;

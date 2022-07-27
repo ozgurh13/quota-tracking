@@ -74,7 +74,7 @@ static int
 sql_select(const char* string)
 {
 	int result = 0;
-	char sqlstr_select[128];
+	char sqlstr_select[256];
 
 	sprintf( sqlstr_select
 	       , "SELECT COUNT(*) FROM hotspot_quota_tracking WHERE mac_address = '%s';"

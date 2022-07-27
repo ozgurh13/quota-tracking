@@ -15,8 +15,6 @@ typedef enum {
 	T_DELETE_DEVICE,            // delete by name
 	T_DELETE_INACTIVE,          // remove all inactive processes
 	T_TERMINATE,                // terminate program
-	T_EXIT,                     // exit (only for the shell)
-	T_LOAD,                     // load a file (only for the shell)
 	T_INVALID                   // invalid command
 } type_t;
 

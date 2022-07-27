@@ -4,9 +4,9 @@ cd src
 
 # make the C side
 echo -n "making project..."
-gcc -O3 main.c msleep.c hashmap.c database.c extract.c            \
-	proclist.c proc.c open_device.c fifo.c parser.c               \
-	-o ../main -lpcap -lpthread -lsqlite3
+gcc -Wall -Wextra -O3 main.c msleep.c hashmap.c database.c           \
+    extract.c proclist.c proc.c open_device.c fifo.c parser.c        \
+    -o ../main -lpcap -lpthread -lsqlite3
 echo " done"
 
 

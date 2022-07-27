@@ -11,6 +11,8 @@
 
 # include <sys/stat.h>             /*  mkfifo  */
 
+# include <stdnoreturn.h>
+
 # include <unistd.h>
 # include "msleep.h"
 
@@ -25,7 +27,7 @@
 static void initialize();
 static void *start_tracker(void *args);
 
-int main(int argc, char* argv[])
+int main()
 {
 	initialize();
 	fifo_listen();
@@ -92,7 +94,7 @@ write_to_db(node_t *node)
 	db_write(node->key);
 }
 
-static void
+static void __attribute__((unused))
 print_kv(node_t *node)
 {
 	printf( "%s :~: %zu : %zu\n"
@@ -107,8 +109,8 @@ print_kv(node_t *node)
  *
  * take collected data and write to database
  */
-static void*
-start_tracker(void *args)
+static noreturn void*
+start_tracker(void *)
 {
 	hashmap_t acc;       // tmp to swap accumulators
 
@@ -138,7 +140,7 @@ start_tracker(void *args)
 
 
 void
-packet_handler_mode2( unsigned char *param
+packet_handler_mode2( unsigned char *
                     , const struct pcap_pkthdr *header
                     , const unsigned char *pkt_data )
 {
@@ -162,7 +164,7 @@ packet_handler_mode2( unsigned char *param
 }
 
 void
-packet_handler_mode3( unsigned char *param
+packet_handler_mode3( unsigned char *
                     , const struct pcap_pkthdr *header
                     , const unsigned char *pkt_data )
 {

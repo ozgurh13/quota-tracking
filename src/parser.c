@@ -64,16 +64,6 @@ parse_command(token_t *token, char* raw_command)
 					token->type = T_INVALID;
 
 			}
-			else if (MATCHES("load")) {
-				token->type = T_LOAD;
-
-				SKIP_WORD       // skip "load"
-				SKIP_WHITESPACE
-
-				copy_over_string(token->filename, c);
-			}
-			else
-				token->type = T_INVALID;
 
 			break;
 
@@ -158,25 +148,6 @@ parse_command(token_t *token, char* raw_command)
 				token->type = T_INVALID;
 
 			break;
-
-
-		case 'e':    // exit
-			if (MATCHES("exit"))
-				token->type = T_EXIT;
-			else
-				token->type = T_INVALID;
-
-			break;
-
-
-		case 'q':    // quit
-			if (MATCHES("quit"))
-				token->type = T_EXIT;
-			else
-				token->type = T_INVALID;
-
-			break;
-
 
 		default:
 			token->type = T_INVALID;

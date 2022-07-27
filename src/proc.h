@@ -9,7 +9,7 @@
  * process struct
  */
 typedef struct proc_t {
-	size_t pid;                    // process id
+	int pid;                       // process id
 	char* device;                  // device being listened to
 	int mode;                      // listening mode
 
