@@ -23,7 +23,8 @@ make the project by running `make.sh`. this will build the project and the inter
 ```
 # sh make.sh
 ```
-the main project is written in C and the shell is written in Haskell so you will need both `gcc` and `ghc`.
+the main project is written in C and the shell is written in Haskell so you will need both `gcc` and `ghc`.  
+you will also need the C libraries for `pcap`, `pthreads` and `sqlite3` as well as `parsec` for Haskell.  
 
 after this run the main program
 ```
